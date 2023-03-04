@@ -13,6 +13,11 @@ WORKDIR /app
 COPY target/my-spring-boot-app.jar /app
 
 # Expose port 8080 to the outside world
+# To expose a port in a Dockerfile, you can use the EXPOSE instruction. 
+# This instruction informs Docker that the container will listen on the 
+# specified network port(s) at runtime.
+
+# Here's the syntax of the EXPOSE instruction:
 EXPOSE 8080
 
 # Run the Spring Boot application when the container starts
@@ -39,6 +44,49 @@ To use this Dockerfile, you would need to navigate to the directory containing t
 docker build -t my-spring-boot-app-image .
 ```
 
-This command builds a Docker image using the Dockerfile and tags it with the name "my-spring-boot-app-image". The "." at the end of the command specifies that the Dockerfile is in the current directory. Once the image is built, you can run a container based on the image using the "docker run" command.
+This command builds a Docker image using the Dockerfile and tags it with the name "my-spring-boot-app-image". The "." at the end of the command specifies that the Dockerfile is in the current directory. Once the image is built, you can run a container based on the image using the "docker run" command. 
+
+```
+docker run -p 8080:8080 <image-name>
+```
+Replace <image-name> with the name of the Docker image you want to run.
+
+Note that exposing a port in the Dockerfile does not actually publish the port to the host; it only informs Docker that the container will listen on that port at runtime. You still need to use the -p or --publish option when running the container to bind the exposed port to a host port.
+
+Use the following command to list all the Docker images on your system:
+```
+docker images
+```
+
+Use the following command to delete the image:
+
+```
+docker rmi [IMAGE ID]
+```
+Replace [IMAGE ID] with the ID of the image you want to delete. You can also specify the repository and tag instead of the ID, like this:
+
+```
+docker rmi [REPOSITORY]:[TAG]
+```
+
+For example, if you wanted to delete an image with the repository name "my-app" and the tag "latest", you would use the following command:
+
+```
+docker rmi my-app:latest
+```
+
+
+If the image has dependent child images or running containers, you can use the "-f" or "--force" option to force the removal of the image:
+
+```
+docker rmi -f [IMAGE ID]
+```
+
+Be careful when using the "-f" option, as it will forcibly remove the image without checking for dependent child images or running containers.
+
+After executing the command, Docker will delete the specified image and any dependent child images that are no longer needed.
+
+
+
 
 
