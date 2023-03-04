@@ -1,4 +1,4 @@
-# How to set up Docker file for a spring boot 
+# How to set up Docker file for a spring boot application
 
 Here's an example Dockerfile to create an image of a Spring Boot application:
 
