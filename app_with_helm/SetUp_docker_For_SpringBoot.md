@@ -1,4 +1,4 @@
-#How to set up Docker file for a spring boot 
+# How to set up Docker file for a spring boot 
 
 Here's an example Dockerfile to create an image of a Spring Boot application:
 
@@ -20,7 +20,7 @@ CMD ["java", "-jar", "my-spring-boot-app.jar"]
 
 ```
 
-###This Dockerfile does the following:
+### This Dockerfile does the following:
 
 1. Starts with a base image of the Java runtime that includes the JDK and is optimized for Alpine Linux.
 
