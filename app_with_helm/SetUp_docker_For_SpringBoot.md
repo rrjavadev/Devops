@@ -86,7 +86,19 @@ Be careful when using the "-f" option, as it will forcibly remove the image with
 
 After executing the command, Docker will delete the specified image and any dependent child images that are no longer needed.
 
+Finally, to stop all the running containers, use the following command.
 
+```
+ docker stop $(docker ps -q)
+```
+
+If you only want to stop a specific container, you can replace $(docker ps -q) with the ID or name of the container you want to stop, like this:
+
+```
+docker stop <container-id-or-name>
+```
+
+Replace <container-id-or-name> with the actual ID or name of the container you want to stop.
 
 
 
