@@ -100,5 +100,19 @@ docker stop <container-id-or-name>
 
 Replace <container-id-or-name> with the actual ID or name of the container you want to stop.
 
+To tag a docker image to remote repo:
+
+```
+docker tag loan-approval-spring-boot-image:v2 roshinivr/rosh_docker_repo:v1
+
+```
+
+To push a docker image to remote repo:
+
+```
+docker push roshinivr/rosh_docker_repo:v1  
+```
+
+
 
 
