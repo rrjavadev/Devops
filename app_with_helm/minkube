@@ -17,3 +17,9 @@ kubectl get pods
 
 # Forward the port so that the application can be accessed from outside the cluster
 kubetcl port-forward loan-approval-new :8085
+
+# Get the running deployments
+kubectl get deploy
+
+# Delete all the deployments
+kubectl delete deploy <deployment name>
