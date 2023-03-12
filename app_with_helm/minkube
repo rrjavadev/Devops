@@ -9,7 +9,7 @@ eval $(minikube docker-env)
 minikube image load <image name>
 ```
 
-# Run in minikube
+# Run in minikube. Do not pull image from container registry, but should be taken from local.
 kubectl run hello-foo --image=foo:0.0.1 --image-pull-policy=Never
 
 # Check that it's running
