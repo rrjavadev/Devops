@@ -112,6 +112,7 @@ To push a docker image to remote repo:
 ```
 docker push roshinivr/rosh_docker_repo:v1  
 ```
+docker pull roshinivr/rosh_docker_repo:v1
 
 
 

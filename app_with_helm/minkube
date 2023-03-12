@@ -1,0 +1,19 @@
+# Start minikube
+minikube start
+
+# Set docker env
+eval $(minikube docker-env)            
+
+# To push your local Docker image directly to minikube, which will save time from building the images in minikube again:
+```
+minikube image load <image name>
+```
+
+# Run in minikube
+kubectl run hello-foo --image=foo:0.0.1 --image-pull-policy=Never
+
+# Check that it's running
+kubectl get pods
+
+# Forward the port so that the application can be accessed from outside the cluster
+kubetcl port-forward loan-approval-new :8085
